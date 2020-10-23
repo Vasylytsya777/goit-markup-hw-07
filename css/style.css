@@ -114,7 +114,7 @@ body {
   overflow: hidden;
 }
 
-.navigaion__list .link-curent {
+.navigaion__list .navigaion__link-curent {
   color: var(--accent-color);
   position: relative;
 }
@@ -196,6 +196,7 @@ body {
 .authorization__item {
   display: flex;
   align-items: center;
+
   text-decoration: none;
   font-style: normal;
   font-weight: 500;
@@ -206,11 +207,13 @@ body {
 .authorization__item-tel,
 .authorization__item-mail {
   display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--secondary-text-color);
   text-decoration: none;
 }
 
-.authorization__item:hover .icon-auth {
+.authorization__item:hover .authorization__icon {
   color: var(--accent-color);
   fill: var(--accent-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -228,14 +231,13 @@ body {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.authorization__item_mail:focus .authorization__icon,
-.authorization__item_tel:focus .authorization__icon {
+.authorization__item-mail:focus .authorization__icon,
+.authorization__item-tel:focus .authorization__icon {
   fill: var(--accent-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .authorization__icon {
-  block-size: border-box;
   display: flex;
   align-items: center;
   margin-right: 10px;
@@ -845,7 +847,7 @@ body {
   padding-bottom: 94px;
 }
 
-.button-container {
+.filter-btn {
   display: flex;
   align-content: center;
   justify-content: center;
@@ -868,7 +870,7 @@ body {
 }
 
 /*задаєм правий марджин для кнопок, крім першої (бо перша вже не міє сестринської Item)*/
-.button-container .item + .item {
+.filter-btn .filter-btn__item + .filter-btn__item {
   margin-left: 8px;
 }
 
@@ -887,13 +889,22 @@ body {
 */
 
 /* секція робіт з картинками*/
+.visually-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.visually-container .image {
+  display: block;
+}
+
 .project-item {
   width: calc((100% - 2 * 30px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
 }
 
-.project-title {
+.projects__content {
   display: block;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -918,14 +929,6 @@ body {
   margin-bottom: 0;
 }
 
-.visually-container .image {
-  display: block;
-}
-.visually-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 /* !!!!!!!!!!!!!!!!!!!! ось тут шукаю помилку! */
 .visually-container .item {
   display: inline-block;
@@ -938,7 +941,7 @@ body {
   margin-bottom: 30px;
 }
 
-.stitle {
+.projects__content-title {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -948,7 +951,7 @@ body {
   margin: 0px 24px 0px;
 }
 
-.ptitle {
+.projects__content-text {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.87;
@@ -970,12 +973,6 @@ body {
 .project-item-block:hover .project-block {
   transform: translatey(0);
 }
-
-.project-iten {
-  position: relative;
-  overflow: hidden;
-}
-
 .project-link:hover .project-block,
 .project-link:focus .project-block {
   transform: translateY(0%);
@@ -989,14 +986,12 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(33, 150, 243, 0.9);
-
   transform: translatey(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-block p {
   padding: 63px 24px;
-
   width: 370px;
   height: 294px;
   font-weight: 400;
