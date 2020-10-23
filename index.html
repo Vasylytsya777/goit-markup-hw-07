@@ -393,8 +393,6 @@
     </address>
   </div>
 
-    
-
      <div class="footer__social-list"> 
           <h3 class="footer__social-title">ПРИСОЕДИНАЙТЕСЬ</h3>
         <ul class="social__list list">
@@ -446,65 +444,57 @@
   </footer>
               
                   <!-- Модальне вікно -->
-                  <div data-modal class="backdrop is-hidden">
+                  <div  class="backdrop is-hidden" data-modal>
                     <div class="modal">
-                      <button type="button" class="close-modal" data-modal-close>
-                        <svg>
-                          <use href="./img/svg/sprite.svg#close-black"></use>
-                        </svg>
-                      </button>
-                      <form action="#" class="contact-form">
-                        <p>Оставьте свои данные, мы вам перезвоним</p>
+                      <form action="#" class="modal__form">
+                        <p class="modal__form-title">Оставьте свои данные, мы вам перезвоним</p>
                   
                         <!--Льоша брав в секцію  і давав одинаковий клас (для подальшої стилізації)-->
-                  
-                        <div class="modal-form-window">
-                          <input type="text" class="contact-form-input" name="user-name" id="user-name">
-                          <label class="modal-form-input-label" for="user-name">Имя</label>
-                          <svg class="modal-icon">
+                         <div class="modal__form-window">
+                          <input type="text" class="modal__input" name="user-name" id="user-name">
+                          <label class="modal__input-label" for="user-name">Имя</label>
+                          <svg class="modal__icon">
                             <use href="./img/svg/sprite.svg#person-black"></use>
                           </svg>
                         </div>
-                  
-                  
-                        <div class="modal-form-window">
-                          <input type="tel" class="contact-form-input" name="user-tel" id="user-tel" />
-                          <label class="modal-form-input-label" for="user-tel">Телефон</label>
-                          <svg class="modal-icon">
+                                    
+                        <div class="modal__form-window">
+                          <input type="tel" class="modal__input" name="user-tel" id="user-tel" />
+                          <label class="modal__input-label" for="user-tel">Телефон</label>
+                          <svg class="modal__icon">
                             <use href="./img/svg/sprite.svg#phone-black"></use>
                           </svg>
                         </div>
                   
-                        <div class="modal-form-window">
-                          <input type="email" class="contact-form-input" name="user-email" id="user-email" />
-                          <label class="modal-form-input-label" for="user-email">Почта</label>
-                          <svg class="modal-icon">
+                        <div class="modal__form-window">
+                          <input type="email" class="modal__input" name="user-email" id="user-email" />
+                          <label class="modal__input-label" for="user-email">Почта</label>
+                          <svg class="modal__icon">
                             <use href="./img/svg/sprite.svg#email-black"></use>
                           </svg>
                         </div>
                         <!--Льоша брав в секцію -->
-                  
-                  
                         <!--Льоша брав в секцію давав одинаковий клас-->
-                        <label class="modal-form-input-message" for="user-email">Комментарий</label>
-                        <textarea class="contact-form-message" name="user-message" placeholder="Введите текст"></textarea>
+                        <label class="modal__message" for="user-email">Комментарий</label>
+                        <textarea class="modal__form-message" name="user-message" placeholder="Введите текст"></textarea>
                   
+
                         <!--Льоша брав в секцію -->
-                  
-                  
-                  
-                        <input type="checkbox" class="license-contact visually-hidden" name="license-contact" value="agreed-license"
+                        <input type="checkbox" class="modal__license-contact visually-hidden" name="license-contact" value="agreed-license"
                           id="license">
-                        <label for="license" class="modal-for-label-check">
-                          <span>Соглашаюсь с рассылкой и принимаю<a href="#"> Условия договора</a></span>
+                        <label for="license" class="modal__label-check">
+                          <span>Соглашаюсь с рассылкой и принимаю<a href="#"  class="modal__label-link"> Условия договора</a></span>
                         </label>
-                  
-                  
                         <button type="button" class="contact-form-btn">Отправить</button>
-                  
-                  
                       </form>
+
+                      <button class="close-modal" type="button" data-modal-close>
+                        <svg>
+                          <use href="./img/svg/sprite.svg#close-black"></use>
+                        </svg>
+                      </button>
                     </div>
+
                   </div>
   <script src="./js/modal.js"></script>
   </body>
