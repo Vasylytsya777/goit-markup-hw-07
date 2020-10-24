@@ -12,14 +12,14 @@
     font-weight: 700;
     font-size: 26px;
     line-height: 1.2;
-    color: var(--white-color);
+    color: $white-color;
     text-decoration: none;
     letter-spacing: 0.03em;
     margin-bottom: 20px;
   }
 
   &__name {
-    color: var(--accent-color);
+    color: $accent-color;
   }
 }
 
@@ -47,6 +47,6 @@
   }
 
   &-link--color {
-    color: var(--white-color);
+    color: $white-color;
   }
 }
