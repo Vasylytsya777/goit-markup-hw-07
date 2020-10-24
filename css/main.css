@@ -1,14 +1,4 @@
 @charset "UTF-8";
-:root {
-  --white-color: #ffffff;
-  --black-color: #000000;
-  --accent-color: #2196f3;
-  --main-text-color: #212121;
-  --secondary-text-color: #757575;
-  --main-footer-background-color: #2f303a;
-  --background-grey-color: #f5f4fa;
-}
-
 *,
 *::before,
 *::after {
@@ -69,6 +59,7 @@ img {
   background-color: var(--white-color);
   margin: 0 auto;
   border-bottom: 1px solid #ececec;
+  /* Лого */
 }
 
 .header__container {
@@ -78,16 +69,6 @@ img {
   /*justify-content: space-between;*/
 }
 
-/*Контейнер nav*/
-/*Задаємо глобальні параметри для контейнера*/
-/* Навігаія сайту */
-/*ставимо вертикальні блоки в горизонт (лінію) і центруємо її*/
-.navigaion {
-  display: flex;
-  align-self: center;
-}
-
-/* Лого */
 .header__logo {
   font-family: Raleway, sans-serif;
   font-weight: 700;
@@ -104,7 +85,16 @@ img {
   color: var(--accent-color);
 }
 
-/* робимо анімацію для списку навігації*/
+/*Контейнер nav*/
+/*Задаємо глобальні параметри для контейнера*/
+/* Навігаія сайту */
+/*ставимо вертикальні блоки в горизонт (лінію) і центруємо її*/
+.navigaion {
+  display: flex;
+  align-self: center;
+  /* робимо анімацію для списку навігації*/
+}
+
 .navigaion__list {
   display: flex;
   width: 294px;
@@ -132,8 +122,7 @@ img {
   padding-bottom: 32px;
 }
 
-.navigaion__link:hover,
-.navigaion__link:focus {
+.navigaion__link:hover, .navigaion__link:focus {
   color: var(--accent-color);
 }
 
@@ -184,11 +173,11 @@ img {
   text-decoration: none;
 }
 
-.authorization .authorization__item + .authorization__item {
+.authorization__item + .authorization__item {
   margin-left: 50px;
 }
 
-.authorization__item {
+.authorization__item + .authorization__item__item {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -199,8 +188,7 @@ img {
   letter-spacing: 0.02em;
 }
 
-.authorization__item-tel,
-.authorization__item-mail {
+.authorization__item + .authorization__item-tel, .authorization__item + .authorization__item-mail {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,27 +196,26 @@ img {
   text-decoration: none;
 }
 
-.authorization__item:hover .authorization__icon {
+.authorization__item + .authorization__item:hover .authorization__icon {
   color: var(--accent-color);
   fill: var(--accent-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.authorization__item:hover .authorization__item-mail,
-.authorization__item:hover .authorization__item-tel {
+.authorization__item + .authorization__item:hover .authorization__item + .authorization__item-mail,
+.authorization__item + .authorization__item:hover .authorization__item + .authorization__item-tel {
   color: var(--accent-color);
   fill: var(--accent-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.authorization__item-mail:focus,
-.authorization__item-tel:focus {
+.authorization__item + .authorization__item-mail:focus, .authorization__item + .authorization__item-tel:focus {
   color: var(--accent-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.authorization__item-mail:focus .authorization__icon,
-.authorization__item-tel:focus .authorization__icon {
+.authorization__item + .authorization__item-mail:focus .authorization__icon,
+.authorization__item + .authorization__item-tel:focus .authorization__icon {
   fill: var(--accent-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -253,6 +240,7 @@ img {
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/herobg/herobg.jpg");
   background-position: center;
   background-size: cover;
+  /*=============  секція  BUTTON   ==============*/
 }
 
 .hero__title {
@@ -270,7 +258,6 @@ img {
   max-width: 700px;
 }
 
-/*=============  секція  BUTTON   ==============*/
 .hero__button {
   /* font-family: inherit; */
   display: inline-block;
@@ -308,18 +295,17 @@ img {
 
 .features__list {
   display: flex;
+  /*задаєм правий марджин для тексту, крім першого (бо перша вже не міє сестринської Item)*/
 }
 
 .features__list .features__list-item {
   width: calc((100% - 90px) / 4);
 }
 
-/*задаєм правий марджин для тексту, крім першого (бо перша вже не міє сестринської Item)*/
-.features__list .features__list-item + .features__list-item {
+.features__list .features__list-item + .features__listitem {
   margin-left: 30px;
 }
 
-/**/
 .features__list-item::before {
   display: block;
   content: "";
@@ -329,26 +315,6 @@ img {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.item-antenna::before {
-  background-image: url(../img/features/antenna.svg);
-  background-size: 70px;
-}
-
-.item-clock::before {
-  background-image: url(../img/features/clock.svg);
-  background-size: 70px;
-}
-
-.item-diagram::before {
-  background-image: url(../img/features/diagram.svg);
-  background-size: 70px;
-}
-
-.item-astronaut::before {
-  background-image: url(../img/features/astronaut.svg);
-  background-size: 70px;
 }
 
 .features__title {
@@ -370,6 +336,26 @@ img {
   letter-spacing: 0.03em;
   padding: 0px;
   margin: 0px;
+}
+
+.item-antenna::before {
+  background-image: url(../img/features/antenna.svg);
+  background-size: 70px;
+}
+
+.item-clock::before {
+  background-image: url(../img/features/clock.svg);
+  background-size: 70px;
+}
+
+.item-diagram::before {
+  background-image: url(../img/features/diagram.svg);
+  background-size: 70px;
+}
+
+.item-astronaut::before {
+  background-image: url(../img/features/astronaut.svg);
+  background-size: 70px;
 }
 
 /*=============   OUR WORK   ==============*/
@@ -400,9 +386,9 @@ img {
   position: relative;
   display: block;
   width: 370px;
+  /*задаєм правий марджин для фоточок, крім першої (бо перша вже не міє сестринської Item)*/
 }
 
-/*задаєм правий марджин для фоточок, крім першої (бо перша вже не міє сестринської Item)*/
 .ourwork__item:not(:last-child) {
   margin-right: 30px;
 }
@@ -439,9 +425,9 @@ img {
 
 .ourteam__list {
   display: flex;
+  /*задаєм правий марджин для картинок, крім першої (бо перша вже не міє сестринської Item)*/
 }
 
-/*задаєм правий марджин для картинок, крім першої (бо перша вже не міє сестринської Item)*/
 .ourteam__list .ourteam__item {
   width: calc((100% - 3 * 30px) / 3);
   margin-right: 30px;
@@ -512,14 +498,7 @@ img {
   border-radius: 50%;
 }
 
-.ourteam__social-svg {
-  width: 20px;
-  height: 20px;
-  fill: #afb1b8;
-}
-
-.ourteam__social-link:hover,
-.ourteam__social-link:focus {
+.ourteam__social-link:hover, .ourteam__social-link:focus {
   background-color: var(--accent-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -530,10 +509,10 @@ img {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.ourteam__social-link:hover,
-.ourteam__social-link:focus {
-  background: var(--accent-color);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.ourteam__social-svg {
+  width: 20px;
+  height: 20px;
+  fill: #afb1b8;
 }
 
 /*=============   regular-clients   ==============*/
@@ -680,18 +659,6 @@ img {
   width: 206px;
 }
 
-.footer__title {
-  display: block;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.143;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--white-color);
-  margin-bottom: 20px;
-}
-
 .footer-join__list {
   display: flex;
   margin: 0 auto;
@@ -718,10 +685,21 @@ img {
   fill: var(--white-color);
 }
 
-.footer-join__link:hover,
-.footer-join__link:focus {
+.footer-join__link:hover, .footer-join__link:focus {
   background: var(--accent-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer__title {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
+  margin-bottom: 20px;
 }
 
 /*3 секція*/
@@ -773,8 +751,7 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.subscribe__mail:hover,
-.subscribe__mail:focus {
+.subscribe__mail:hover, .subscribe__mail:focus {
   border: 1px solid var(--accent-color);
 }
 
@@ -798,15 +775,14 @@ img {
   transition: 250ms var(--transition-timing-function);
 }
 
-.telegram-icon {
-  margin-left: 10px;
-}
-
-.btn-subscribe:hover,
-.btn-subscribe:focus {
+.btn-subscribe:hover, .btn-subscribe:focus {
   cursor: pointer;
   background-color: #188ce8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.telegram-icon {
+  margin-left: 10px;
 }
 
 /*=====================    Портфоліо    =====================*/
@@ -820,6 +796,11 @@ img {
   align-content: center;
   justify-content: center;
   padding-bottom: 50px;
+  /*задаєм правий марджин для кнопок, крім першої (бо перша вже не міє сестринської Item)*/
+}
+
+.filter-btn .filter-btn__item + .filter-btn__item {
+  margin-left: 8px;
 }
 
 .button-menu {
@@ -837,20 +818,13 @@ img {
   padding: 6px 22px;
 }
 
-/*задаєм правий марджин для кнопок, крім першої (бо перша вже не міє сестринської Item)*/
-.filter-btn .filter-btn__item + .filter-btn__item {
-  margin-left: 8px;
-}
-
-.button-menu:hover,
-.button-menu:focus {
+.button-menu:hover, .button-menu:focus {
   background-color: var(--accent-color);
   color: var(--white-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ======================= Модальне вікно ====================*/
 .backdrop {
   position: fixed;
   top: 0px;
@@ -863,12 +837,12 @@ img {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden {
+.backdrop .is-hidden {
   opacity: 0;
   pointer-events: none;
 }
 
-.backdrop.backdrop.is-hidden .modal {
+.backdrop .is-hidden .modal {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
@@ -884,6 +858,8 @@ img {
   left: 50%;
   transform: translate(-50%, -50%) scaleY(1);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /*відступ між вікнами*/
+  /*якась помилка до верху*/
 }
 
 .modal__form {
@@ -907,13 +883,7 @@ img {
   padding-left: 42px;
 }
 
-.modal__input:focus,
-.modal__form-message:focus .modal__input {
-  outline: none;
-}
-
-.modal__input:focus,
-.modal__input:hover {
+.modal__input:focus, .modal__input:hover {
   border-color: var(--accent-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -924,7 +894,11 @@ img {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/*відступ між вікнами*/
+.modal__input:focus,
+.modal__form-message:focus .modal__input {
+  outline: none;
+}
+
 .modal__form-window {
   position: relative;
   margin-top: 30px;
@@ -961,8 +935,7 @@ img {
   margin-bottom: 4px;
 }
 
-.modal__form-message:focus,
-.modal__form-messagee:hover {
+.modal__form-message:focus, .modal__form-messagee:hover {
   border-color: var(--accent-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -972,7 +945,6 @@ img {
   outline: none;
 }
 
-/*якась помилка до верху*/
 .modal__license-contact {
   position: absolute;
   appearance: none;
@@ -1050,10 +1022,25 @@ img {
   width: calc((100% - 2 * 30px)/ 3);
 */
 /* секція робіт з картинками*/
+.project {
+  /* ======================= HOVER FOR IMAGE ====================*/
+  /* ======================= HOVER FOR IMAGE ====================*/
+}
+
 .project__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  /*забираємо правий марджин в кожного третього елемента*/
+  /*забираємо нижній марджин в останніх трьох елементів*/
+}
+
+.project__container .project__item:nth-child(3n) {
+  margin-right: 0px;
+}
+
+.project__container .project__item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
 }
 
 .project__item {
@@ -1062,7 +1049,11 @@ img {
   margin-bottom: 30px;
 }
 
-.projects__content {
+.project__item:hover, .project__item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.project__content {
   display: block;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -1071,22 +1062,7 @@ img {
   border-bottom: 1px solid #eeeeee;
 }
 
-.project__item:hover,
-.project__item:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-/*забираємо правий марджин в кожного третього елемента*/
-.project__container .project__item:nth-child(3n) {
-  margin-right: 0px;
-}
-
-/*забираємо нижній марджин в останніх трьох елементів*/
-.project__container .project__item:nth-last-child(-n + 3) {
-  margin-bottom: 0;
-}
-
-.projects__content-title {
+.project__content-title {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -1096,7 +1072,7 @@ img {
   margin: 0px 24px 0px;
 }
 
-.projects__content-text {
+.project__content-text {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.87;
@@ -1106,8 +1082,6 @@ img {
   margin-bottom: 20px;
 }
 
-/* ======================= HOVER FOR IMAGE ====================*/
-/* ======================= HOVER FOR IMAGE ====================*/
 .project__item-block {
   position: relative;
   margin-left: auto;
